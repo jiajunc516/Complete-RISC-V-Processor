@@ -19,7 +19,7 @@ module datapath
   logic [AW-1:0] pc_next;
   logic [DW-1:0] aluop1, aluop2, alu_result;
   logic [DW-1:0] regf_dout1, regf_dout2;
-  logic [AW-1:0] regf_wr_addr;
+  logic [4:0] regf_wr_addr;
   logic [DW-1:0] regf_wr_data;
   logic [DW-1:0] imm_val;
 
@@ -177,21 +177,8 @@ module datapath
   // Data memory
   assign dmem_if.addr  = alu_result;
   assign dmem_if.wr    = ctrl.mem_write;
-  //assign dmem_if.wdata = regf_dout2;
+  assign dmem_if.wdata = regf_dout2;
+  assign dmem_if.byte_m1 = inst.rinst.func3;
 
-  // Store data
-  always_comb
-    begin
-      case(inst.sinst.func3)
-        3'b000: // SB
-            dmem_if.wdata = {{24{regf_dout2[7]}}, regf_dout2[7:0]};
-        3'b001: // SH
-            dmem_if.wdata = {{16{regf_dout2[15]}}, regf_dout2[15:0]};
-        3'b010: // SW
-            dmem_if.wdata = regf_dout2;
-      default:
-        dmem_if.wdata = regf_dout2; 
-    endcase
-  end
 
 endmodule:datapath

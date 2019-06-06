@@ -25,7 +25,7 @@ module riscv
   #()
   imem_inst(
     .clk   ( clk     ),
-    .addr  ( pc      ),
+    .addr  ( pc[8:0]      ),
     .rdata ( inst    ),
     .wr    ( 1'b0    ),
     .wdata ( )
@@ -51,7 +51,7 @@ module riscv
   #()
   dmem_inst(
     .clk    ( clk ),
-	.func3  (inst.iinst.func3),
+	//.func3  (inst.iinst.func3),
     .mem_if ( dmem_if  )
   );
 

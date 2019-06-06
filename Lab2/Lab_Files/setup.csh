@@ -1,4 +1,3 @@
-
 # FIXME:: Set from Git Repo Base
 setenv MGC_HOME /ecelib/linware/mentor/questa/questasim/
 setenv QUESTA_HOME ${MGC_HOME}
@@ -12,6 +11,13 @@ setenv QUESTA_UVM_HOME $QUESTA_HOME/verilog_src/questa_uvm_pkg-1.2
 setenv UVM_HOME $QUESTA_HOME/verilog_src/uvm-1.1d
 
 setenv PATH ${MGC_HOME}:${MGC_HOME}/bin/:$PATH
+###########################################################
+###### Environment for SNPS Design Compiler
+###########################################################
+
+setenv SNPSLMD_LICENSE_FILE /ecelib/linware/license/synopsys
+setenv SYNOPSYS /ecelib/linware/synopsys-2019.03/ 
+setenv PATH ${SYNOPSYS}/bin:$PATH
 
 source /ecelib/linware/synopsys15/env/dc.csh
 
@@ -29,4 +35,3 @@ setenv scripts `pwd`/scr
 ln -s ../../scr/common.pl sim/run/ -f
 ln -s ../../scr/do.pl     sim/run/ -f
 ln -s ../../scr/Mixed.pm  sim/run/ -f
-

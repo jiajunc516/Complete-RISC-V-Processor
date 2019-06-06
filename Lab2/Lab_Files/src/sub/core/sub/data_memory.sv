@@ -6,17 +6,32 @@ module data_memory
   )
   (
     input  logic          clk,
-	input  logic [2:0] func3,
+    //input  logic [2:0] func3,
     memory_if.slave       mem_if
   );
 
 `ifdef __SIM__
 
   logic [DW-1:0] mem [2**AW];
+  
+  logic [2:0] func3;
+  assign func3 = mem_if.byte_m1;
 
-  always_ff @(posedge clk) begin
+  always_ff @(posedge clk)
+  begin
     if(mem_if.wr)
-      mem[mem_if.addr] <= mem_if.wdata;
+    begin
+      case(func3)
+        3'b000: // SB
+            mem[mem_if.addr][7:0] <= mem_if.wdata[7:0];
+        3'b001: // SH
+            mem[mem_if.addr][15:0] <= mem_if.wdata[15:0];
+        3'b010: // SW
+            mem[mem_if.addr] <= mem_if.wdata;
+      default:
+        mem[mem_if.addr] <= mem_if.wdata;
+      endcase
+    end
   end
 
   logic [DW-1:0] temp_r_data;
