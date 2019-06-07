@@ -1,0 +1,91 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : design_top
+Version: J-2014.09-SP4
+Date   : Fri Jun  7 14:46:06 2019
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt1p05vn40c   Library: saed32lvt_tt1p05vn40c
+Wire Load Model Mode: enclosed
+
+  Startpoint: riscv_inst/imem_inst/RAM
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: riscv_inst/dp_inst/regf_inst/regmem_reg[2][29]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  design_top         ForQA                 saed32lvt_tt1p05vn40c
+  datapath_AW32_I_ctrl_controller_if__I_dmem_if_memory_if__
+                     35000                 saed32lvt_tt1p05vn40c
+  register_file_AW5_DW32
+                     16000                 saed32lvt_tt1p05vn40c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  riscv_inst/imem_inst/RAM/CE (SRAM1RW512x32)             0.00 #     0.00 r
+  riscv_inst/imem_inst/RAM/O[3] (SRAM1RW512x32)           3.41       3.41 r
+  riscv_inst/imem_inst/rdata[3] (instruction_memory)      0.00       3.41 r
+  U7/Y (INVX1_LVT)                                        0.04       3.45 f
+  U5/Y (AND3X1_LVT)                                       0.06       3.51 f
+  U18/Y (AND3X1_LVT)                                      0.05       3.56 f
+  U8/Y (OR3X1_LVT)                                        0.06       3.62 f
+  riscv_inst/dp_inst/ctrl.aluop[0] (datapath_AW32_I_ctrl_controller_if__I_dmem_if_memory_if__)
+                                                          0.00       3.62 f
+  riscv_inst/dp_inst/U153/Y (INVX0_LVT)                   0.04       3.66 r
+  riscv_inst/dp_inst/U629/Y (AND3X1_LVT)                  0.03       3.69 r
+  riscv_inst/dp_inst/U351/Y (OA22X1_LVT)                  0.05       3.74 r
+  riscv_inst/dp_inst/U3/Y (INVX4_LVT)                     0.11       3.85 f
+  riscv_inst/dp_inst/U1013/Y (XOR2X1_LVT)                 0.13       3.98 r
+  riscv_inst/dp_inst/U1018/Y (NAND2X0_LVT)                0.03       4.02 f
+  riscv_inst/dp_inst/U7/Y (OAI21X1_LVT)                   0.07       4.08 r
+  riscv_inst/dp_inst/U1022/Y (AOI21X1_LVT)                0.05       4.13 f
+  riscv_inst/dp_inst/U115/Y (OAI21X1_LVT)                 0.05       4.19 r
+  riscv_inst/dp_inst/U114/Y (AOI21X1_LVT)                 0.04       4.23 f
+  riscv_inst/dp_inst/U1034/Y (OA21X1_LVT)                 0.04       4.27 f
+  riscv_inst/dp_inst/U1035/Y (OAI22X1_LVT)                0.04       4.31 r
+  riscv_inst/dp_inst/U1037/Y (AO22X1_LVT)                 0.04       4.35 r
+  riscv_inst/dp_inst/U1039/Y (AO22X1_LVT)                 0.04       4.39 r
+  riscv_inst/dp_inst/U1041/Y (AO22X1_LVT)                 0.04       4.44 r
+  riscv_inst/dp_inst/U1043/Y (AO22X1_LVT)                 0.04       4.48 r
+  riscv_inst/dp_inst/U1044/Y (AO22X1_LVT)                 0.04       4.52 r
+  riscv_inst/dp_inst/U1045/Y (AO22X1_LVT)                 0.04       4.57 r
+  riscv_inst/dp_inst/U341/Y (AO22X1_LVT)                  0.04       4.61 r
+  riscv_inst/dp_inst/U1047/Y (AO22X1_LVT)                 0.04       4.65 r
+  riscv_inst/dp_inst/U1048/Y (AO22X1_LVT)                 0.04       4.69 r
+  riscv_inst/dp_inst/U237/Y (XOR3X1_LVT)                  0.05       4.74 r
+  riscv_inst/dp_inst/U1354/Y (AO21X1_LVT)                 0.04       4.78 r
+  riscv_inst/dp_inst/U1361/Y (AO21X1_LVT)                 0.04       4.82 r
+  riscv_inst/dp_inst/regf_inst/wr_data[29] (register_file_AW5_DW32)
+                                                          0.00       4.82 r
+  riscv_inst/dp_inst/regf_inst/U10/Y (AND2X1_LVT)         0.05       4.87 r
+  riscv_inst/dp_inst/regf_inst/U1582/Y (NBUFFX2_LVT)      0.05       4.92 r
+  riscv_inst/dp_inst/regf_inst/U1599/Y (AO22X1_LVT)       0.05       4.97 r
+  riscv_inst/dp_inst/regf_inst/regmem_reg[2][29]/D (DFFX1_LVT)
+                                                          0.01       4.98 r
+  data arrival time                                                  4.98
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  riscv_inst/dp_inst/regf_inst/regmem_reg[2][29]/CLK (DFFX1_LVT)
+                                                          0.00       5.00 r
+  library setup time                                     -0.01       4.99
+  data required time                                                 4.99
+  --------------------------------------------------------------------------
+  data required time                                                 4.99
+  data arrival time                                                 -4.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

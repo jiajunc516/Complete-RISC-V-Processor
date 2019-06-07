@@ -1,0 +1,78 @@
+Warning: duplicate option '-nosplit' overrides previous value. (CMD-018)
+ 
+****************************************
+Report : area
+Design : design_top
+Version: J-2014.09-SP4
+Date   : Fri Jun  7 14:46:06 2019
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32lvt_tt1p05vn40c.db)
+    gtech (File: /ecelib/linware/synopsys15/dc/libraries/syn/gtech.db)
+    saed32sram_tt1p05vn40c (File: /users/ugrad2/2012/spring/pooriam/libraries/saed32sram_tt1p05vn40c.db)
+
+Number of ports:                           11
+Number of nets:                           148
+Number of cells:                           33
+Number of combinational cells:             30
+Number of sequential cells:                 0
+Number of macros/black boxes:               1
+Number of buf/inv:                          7
+Number of references:                      13
+
+Combinational area:              11862.171200
+Buf/Inv area:                      533.956544
+Noncombinational area:            6977.777893
+Macro/Black Box area:           101335.367188
+Net Interconnect area:            6601.577081
+
+Total cell area:                120175.316281
+Total area:                     126776.893361
+
+Information: This design contains unmapped logic. (RPT-7)
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area               Local cell area
+                                  --------------------  ---------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-  Black-
+                                  Total        Total    national    national   boxes        Design
+--------------------------------  -----------  -------  ----------  ---------  -----------  ---------------------------------------------------------
+design_top                        120175.3163    100.0     58.1990     0.0000   50667.6836  design_top
+riscv_inst/dp_inst                 18781.7501     15.6   5049.3330   211.4478       0.0000  datapath_AW32_I_ctrl_controller_if__I_dmem_if_memory_if__
+riscv_inst/dp_inst/regf_inst       13520.9693     11.3   6754.6392  6766.3301       0.0000  register_file_AW5_DW32
+riscv_inst/imem_inst               50667.6836     42.2      0.0000     0.0000   50667.6836  instruction_memory
+--------------------------------  -----------  -------  ----------  ---------  -----------  ---------------------------------------------------------
+Total                                                   11862.1712  6977.7779  101335.3672
+
+
+Area of detected synthetic parts
+--------------------------------
+  No DW parts to report!
+
+Estimated area of ungrouped synthetic parts
+-------------------------------------------
+                                      Estimated  Perc. of
+  Module              Implem.  Count       Area cell area
+  ------------------- -------  ----- ---------- ---------
+  DP_OP_21J2_122_6212     str      1   398.5088      0.3%
+  DP_OP_38_131_3269       str      1   588.6371      0.5%
+  DP_OP_58_132_416        str      1   598.7772      0.5%
+  DW01_add            apparch      1    97.0830      0.1%
+  DW_cmp              apparch      4   474.8717      0.4%
+  DW_cmp               pparch      2   663.4697      0.6%
+  DW_leftsh              astr      1   400.7853      0.3%
+  DW_rightsh             astr      2   791.9133      0.7%
+  ------------------- -------  ----- ---------- ---------
+  DP_OP Subtotal:                  3  1585.9231      1.3%
+  Total:                          13  4014.0461      3.3%
+
+Subtotal of datapath(DP_OP) cell area:  1585.9231  1.3%  (estimated)
+Total synthetic cell area:              4014.0461  3.3%  (estimated)
+
+1
