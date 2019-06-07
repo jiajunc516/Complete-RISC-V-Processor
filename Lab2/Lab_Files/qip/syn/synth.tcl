@@ -10,7 +10,7 @@ set TOP                         "design_top"
 #set TOP                         "Datapath"
 #set TOP                         "Controller"
 set FILES                       "files_design_top"
-set clock_period               4.0 
+set clock_period               5.0 
 
 #==============================================================================
 #                  D I R E C T O R Y   S T R U C T U R E
